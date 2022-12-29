@@ -1,9 +1,15 @@
-import { Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/react"
+import { NextPage } from "next"
+import { Layout } from "../components/layouts"
 
-export default function HomePage() {
+const HomePage: NextPage = () => {
   return (
-    <>
-      <Button color="gradient">Hola Mundo</Button>
-    </>
+    <Layout title={"Luis"}>
+      <Button color="gradient">
+        Hola Mundo
+      </Button>
+    </Layout>
   )
 }
+
+export default HomePage;
