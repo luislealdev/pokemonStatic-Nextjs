@@ -1,4 +1,4 @@
-import { Text } from "@nextui-org/react"
+import { Card, Grid, Row, Text } from "@nextui-org/react"
 import { NextPage } from "next"
 import { Layout } from "../components/layouts"
 
@@ -12,16 +12,31 @@ const HomePage: NextPage<Props> = ({ pokemons }) => {
 
   return (
     <Layout title={"Luis"}>
-      <ul>
-        {
-          pokemons.map((poke: smallPokemon) => {
-            return <li>
-              <Text>{poke.id}. {poke.name.toLocaleUpperCase()}</Text>
-              <Image src={poke.img} alt={poke.name} width={50} height={50} />
-            </li>
-          })
-        }
-      </ul>
+      <Grid.Container gap={2} justify="flex-start">
+        {pokemons.map(({ id, name, img }: smallPokemon) => {
+          return <Grid xs={6} sm={3} key={id}>
+            <Card isPressable>
+              <Card.Body css={{ p: 0 }}>
+                <Card.Image
+                  src={img}
+                  objectFit="cover"
+                  height={140}
+                  alt={name}
+                />
+              </Card.Body>
+              <Card.Footer css={{ justifyItems: "flex-start" }}>
+                <Row wrap="wrap" justify="space-between" align="center">
+                  <Text b>{name}</Text>
+                  <Text css={{ color: "$accents7", fontWeight: "$semibold", fontSize: "$sm" }}>
+                    {id}
+                  </Text>
+                </Row>
+              </Card.Footer>
+            </Card>
+          </Grid>
+        })}
+      </Grid.Container>
+
     </Layout>
   )
 }
