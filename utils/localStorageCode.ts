@@ -19,8 +19,13 @@ const isPokemonInFav = (id: number): boolean => {
     return favPokemons.includes(id);
 };
 
+const pokemons = (): number[] => {
+    return JSON.parse(localStorage.getItem("favPokemons") || '[]');
+}
+
 
 export default {
     toggleFavorite,
-    isPokemonInFav
+    isPokemonInFav,
+    pokemons
 }
