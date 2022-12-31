@@ -1,1 +1,1 @@
-export { default as localStorageCode } from './localStorage';
+export { default as localStorageCode } from './localStorageCode';
