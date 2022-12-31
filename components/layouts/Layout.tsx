@@ -4,16 +4,18 @@ import { Navbar } from '../ui/Navbar';
 
 interface Props {
   children?: JSX.Element,
-  title: string
+  title: string,
+  favIcon: string
 };
 
-export const Layout: FC<Props> = ({ children, title }) => {
+export const Layout: FC<Props> = ({ children, title, favIcon }) => {
   return (
     <>
       <Head>
         <title>
-          {title || 'PokemonApp'}
+          {title + " PokeApp" || 'PokemonApp'}
         </title>
+        <link rel="icon" href={favIcon} type="image/x-icon" />
         <meta name='author' content='Luis Leal' />
         <meta name='description' content={`Información sobre el pokémon ${title}`} />
         <meta name='keywords' content={`${title}, pokemon, pokedex`} />

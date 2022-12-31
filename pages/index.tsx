@@ -15,10 +15,10 @@ interface Props {
 const HomePage: NextPage<Props> = ({ pokemons }) => {
 
   return (
-    <Layout title={"Luis"}>
+    <Layout title="" favIcon="">
       <Grid.Container gap={2} justify="flex-start">
         {pokemons.map((pokemon: smallPokemon) => {
-          return <PokemonCard pokemon={pokemon} key={pokemon.id}/>
+          return <PokemonCard pokemon={pokemon} key={pokemon.id} />
         })}
       </Grid.Container>
     </Layout>
