@@ -1,47 +1,44 @@
-import { Spacer, Text, useTheme, Link } from "@nextui-org/react";
-import Image from "next/image";
-import NextLink from "next/link";
+import Image from 'next/image';
+import NextLink from 'next/link';
+import { Spacer, Text, useTheme, Link } from '@nextui-org/react';
+
 
 export const Navbar = () => {
 
-    const { theme } = useTheme();
+    const { theme } = useTheme()
 
     return (
-        <nav style={{
-            display: "flex",
-            width: "100%",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "start",
-            padding: "0 20px",
-            backgroundColor: theme?.colors.gray50.value
+        <div style={{
+            display: 'flex',
+            width: '100%',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'start',
+            padding: '0x 50px',
+            backgroundColor: theme?.colors.gray900.value
         }}>
-
-            <NextLink href='/' passHref>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                <Image
+            <Image 
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-                alt="Pokemon logo"
+                alt="icono de la app"
                 width={70}
                 height={70}
             />
-                    <Text color="white" h2>P</Text>
-                    <Text color="white" h3>okémon</Text>
-                </div>
+
+            <NextLink href="/" passHref>
+                <Link>
+                    <Text color='white' h2>P</Text>
+                    <Text color='white' h3>okémon!</Text>
+                </Link>
             </NextLink>
 
-
-            <Spacer css={{ flex: 1 }} />
-
-            <NextLink href='/favorites' passHref>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <Text color="white">Favoritos</Text>
-                </div>
+            <Spacer css={{ flex: 1 }}/>
+            
+            <NextLink href="/favorites" passHref>
+                <Link css={{ marginRight: '10px' }}>
+                    <Text color='white'>Favoritos</Text>
+                </Link>
             </NextLink>
 
-
-
-
-        </nav>
+        </div>
     )
-}
+};

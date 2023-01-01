@@ -12,12 +12,13 @@ import { NextPage, GetStaticProps } from "next"
 interface Props {
   pokemons: smallPokemon[]
 }
+
 const HomePage: NextPage<Props> = ({ pokemons }) => {
 
   return (
-    <Layout title="" favIcon="">
+    <Layout title="PokemonsList" favIcon="">
       <Grid.Container gap={2} justify="flex-start">
-        {pokemons.map((pokemon: smallPokemon) => {
+        {pokemons.map((pokemon) => {
           return <PokemonCard pokemon={pokemon} key={pokemon.id} />
         })}
       </Grid.Container>
