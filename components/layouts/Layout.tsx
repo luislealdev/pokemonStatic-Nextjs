@@ -8,6 +8,7 @@ interface Props {
   favIcon: string
 };
 
+const origin = window.origin === undefined ? '' : window.origin;
 export const Layout: FC<Props> = ({ children, title, favIcon }) => {
   return (
     <>
@@ -19,6 +20,10 @@ export const Layout: FC<Props> = ({ children, title, favIcon }) => {
         <meta name='author' content='Luis Leal' />
         <meta name='description' content={`Información sobre el pokémon ${title}`} />
         <meta name='keywords' content={`${title}, pokemon, pokedex`} />
+        {/*METATAGS*/}
+        <meta property="og:title" content={`${title}`} />
+        <meta property="og:description" content={`Información sobre ${title}`} />
+        <meta property="og:image" content={`${origin}/img/banner.png`} />
       </Head>
 
       <Navbar />
