@@ -8,7 +8,8 @@ interface Props {
   favIcon: string
 };
 
-const origin = window.origin === undefined ? '' : window.origin;
+const origin = (typeof window === 'undefined') ? '' : window.location.origin;
+
 export const Layout: FC<Props> = ({ children, title, favIcon }) => {
   return (
     <>
