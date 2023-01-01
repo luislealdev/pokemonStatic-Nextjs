@@ -34,6 +34,11 @@ export const Layout: FC<Props> = ({ children, title, favIcon }) => {
         {children}
       </main>
 
+      <footer>
+        <p style={{ textAlign: 'center' }}>
+          With ღ by @luisrrleal, <br /> <a href='https://luisrrleal.com' target='_blank'>luisrrleal.com</a>
+        </p>
+      </footer>
     </>
   )
 }
