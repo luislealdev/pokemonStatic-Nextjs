@@ -52,7 +52,7 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
                 <Grid xs={12} sm={8}>
                     <Card>
                         <Card.Header css={{ display: 'grid', justifyContent: 'center', '@md': { display: 'flex', justifyContent: "space-between" } }}>
-                            <Text h1 transform="capitalize">
+                            <Text h1 transform="capitalize" css={{textAlign: 'center'}}>
                                 {pokemon.name}
                             </Text>
                             <Button color="gradient" ghost={!isInFavorites} onPress={onToggleFavorite}>
